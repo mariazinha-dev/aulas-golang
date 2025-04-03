@@ -21,7 +21,7 @@ var ages=[4]int{17,16,20,40}
 
 	var superherois =[]string{"Deadpool", "Homem-aranha","Motoqueiro fantasma"}
 	fmt.Println(superherois)
-superherois = append(superherois, "Ben 10")
+superherois = append(superherois, "Ben 10","homem de ferro","viúva negra","thanos")
 fmt.Println(superherois, len(superherois),cap (superherois))
  }
  	
