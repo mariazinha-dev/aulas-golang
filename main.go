@@ -2,16 +2,45 @@ package main
  
  import (
 	"fmt")
- 
- func sayGreeting(nome string) {
-fmt.Println("Olá!",nome)
-}
-func addNumber(numero1 int, numero2 int)int {
-	return numero1 + numero2
-}
 
-func main() {
-	sayGreeting("Juvelino")
-	resultado:= addNumber (10, 20)
-	fmt.Println(resultado)
+
+	var valorsaldo int
+	var opcao string
+	var valordeposito int
+	var valorsaque int
+
+func Saldo() {
+		fmt.Println("digite seu saldo")
+ 		fmt.Scan(&valorsaldo)
+}
+func Opcao(){
+	fmt.Println("voce quer 'sacar' ou 'depositar'?")
+	fmt.Scan(&opcao)
+}
+func Saque() {
+	
+		if opcao == "sacar"{
+		fmt.Println("quanto você deseja sacar?")
+		fmt.Scan(&valorsaque)
+		valorsaldo = valorsaldo - valorsaque
+		fmt.Println("seu saldo é: ", valorsaldo)
+		
+   }
+}
+func Deposito() {
+	if opcao == "depositar"{
+		fmt.Println("quanto vc quer depositar?")
+		fmt.Scan(&valordeposito)
+		valorsaldo = valorsaldo + valordeposito
+
+		fmt.Println("seu saldo é:", valorsaldo)
+	
+		}
+}
+		
+func main (){
+Saldo()
+Opcao()
+Saque()
+Deposito()
 }
