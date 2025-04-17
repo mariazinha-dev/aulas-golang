@@ -3,44 +3,32 @@ package main
  import (
 	"fmt")
 
+func dividir(dividendo int, divisor int) (int, string){
+if divisor == 0 {
+	return 0, "Erro na divisão por zero"
+}
+return dividendo/divisor, "Sem erro"
+}
 
-	var valorsaldo int
-	var opcao string
-	var valordeposito int
-	var valorsaque int
-
-func Saldo() {
-		fmt.Println("digite seu saldo")
- 		fmt.Scan(&valorsaldo)
-}
-func Opcao(){
-	fmt.Println("voce quer 'sacar' ou 'depositar'?")
-	fmt.Scan(&opcao)
-}
-func Saque() {
-	
-		if opcao == "sacar"{
-		fmt.Println("quanto você deseja sacar?")
-		fmt.Scan(&valorsaque)
-		valorsaldo = valorsaldo - valorsaque
-		fmt.Println("seu saldo é: ", valorsaldo)
-		
-   }
-}
-func Deposito() {
-	if opcao == "depositar"{
-		fmt.Println("quanto vc quer depositar?")
-		fmt.Scan(&valordeposito)
-		valorsaldo = valorsaldo + valordeposito
-
-		fmt.Println("seu saldo é:", valorsaldo)
-	
-		}
-}
-		
 func main (){
-Saldo()
-Opcao()
-Saque()
-Deposito()
+resultado, erro := dividir(10,0)
+if erro != "Sem erro" {
+fmt.Println(erro)
+} else{
+	fmt.Println(" O resultado da divisão é:",resultado, erro)
+}
+
+soma,mult,sub := operaçãobasica(10,2)
+fmt.Println(soma)
+fmt.Println(mult)
+fmt.Println(sub)
+
+
+}
+func operaçãobasica(a int, b int) (int, int, int){
+	soma := a +b
+	multiplicacao:= a*b
+	subtracao := a-b
+	return soma,multiplicacao,subtracao
+
 }
