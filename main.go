@@ -4,21 +4,18 @@ import (
 	"fmt"
 )
 
-func mediaNotas(n1, n2 float64) (float64, string){
+func main () {
+	estoque:= make(map[string]int)
+	 estoque["Coxinha"] = 10
+	 estoque["Pão de Queijo"] = 15
+	 estoque["Refrigerante"] = 20
+	 estoque["Coxinha"] -= 2
+	 estoque["Pão de Queijo"] -= 1
+	 estoque["Refrigerante"] -= 0
 
-	media := (n1 + n2) / 2
-
-	if media > 6 {
-		return media, "aprovado"
-	} else
-	{
-		return media, "reprovado"
-	}
-}
-func main() {
-	media, resultado := mediaNotas(9.5, 8.8)
-	fmt.Println("Média:",media)
-	fmt.Println("Resultado:", resultado)
+	 for estoque, total := range estoque{
+		fmt.Printf("%s tem: \n %d quantidade \n", estoque, total)
+	 }
 }
 
 
